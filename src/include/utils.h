@@ -4,12 +4,14 @@
 #define MIN(x, y) (((x) < (y)) ? (x) : (y))
 
 typedef struct COORD_T {
-    float x;
-    float y;
+    int x;
+    int y;
 } coord;
 
 typedef struct BUFFER_T {
     float *buffer;
     int w, h;
 } buffer;
+
+float dist(coord a, coord b);
 #endif // UTILS_H_
