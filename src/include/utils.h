@@ -14,4 +14,5 @@ typedef struct BUFFER_T {
 } buffer;
 
 float dist(coord a, coord b);
+double sqrt(double x);
 #endif // UTILS_H_
