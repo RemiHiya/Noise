@@ -3,6 +3,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+float voronoi(float2 uv, float ratio) {
+    uv.x *= ratio;
+    return MAX(fract(uv.x), fract(uv.y));
+
+}
+/*
 void voronoi(buffer *buffer, int cell_size) {
     srand(1);
     int num_x = 1 + buffer->w / cell_size, num_y = 1 + buffer->h/cell_size;
@@ -36,4 +43,4 @@ void voronoi(buffer *buffer, int cell_size) {
             buffer->buffer[i * buffer->w + j] = (float)rand()/(float)RAND_MAX;//min/cell_size;
         }
     }
-}
+}*/

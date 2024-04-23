@@ -2,6 +2,6 @@
 #define NOISES_H_
 #include "utils.h"
 
-void voronoi(buffer *buffer, int cell_size);
+float voronoi(float2 uv, float ratio);
 
 #endif // NOISES_H_

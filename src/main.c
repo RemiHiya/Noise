@@ -15,10 +15,8 @@ int main(int argc, char *argv[]) {
     buffer->w = win.ws_col;
     buffer->h = win.ws_row;
 
-    printf("%d, %d\n", buffer->w, buffer->h);
-    voronoi(buffer, 10);
-
-    render(buffer);
+    render(buffer, voronoi);
+    draw_buffer(buffer);
 
     return 0;
 }

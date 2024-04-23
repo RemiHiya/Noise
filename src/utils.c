@@ -22,3 +22,7 @@ double sqrt(double x) {
 
   return left;
 }
+
+float fract(float x) {
+  return x - (int) x;
+}

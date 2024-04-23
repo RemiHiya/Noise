@@ -4,7 +4,7 @@
 #include <string.h>
 
 
-void render(buffer *buffer) {
+void draw_buffer(buffer *buffer) {
     char intensity[] = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^`'.";
     //char intensity[] = " .:-=+*#%@";
 
@@ -15,5 +15,14 @@ void render(buffer *buffer) {
             printf("%c", intensity[index]);
         }
         printf("\n");
+    }
+}
+
+void render(buffer *buffer, float (*fn)(float2, float)) {
+    for (int y=0; y<buffer->h; ++y) {
+        for (int x=0; x<buffer->w; ++x) {
+            float2 coord = { (float)x/buffer->w, (float)y/buffer->h};
+            buffer->buffer[y*buffer->w + x] = fn(coord, 0.5* (float)buffer->w/buffer->h);
+        }
     }
 }
