@@ -6,6 +6,10 @@ float dist(coord a, coord b) {
     return sqrt(x*x + y*y);
 }
 
+float lenght(float2 a) {
+  return sqrt(a.x*a.x + a.y*a.y);
+}
+
 double sqrt(double x) {
   if (x < 0) {
     return -1;
@@ -25,4 +29,10 @@ double sqrt(double x) {
 
 float fract(float x) {
   return x - (int) x;
+}
+
+float smoothstep(float edge0, float edge1, float x) {
+    float t = (x - edge0) / (edge1 - edge0);
+    t = (t < 0.0f) ? 0.0f : (t > 1.0f) ? 1.0f : t;
+    return t * t * (3.0f - 2.0f * t);
 }

@@ -18,6 +18,8 @@ typedef struct BUFFER_T {
 } buffer;
 
 float dist(coord a, coord b);
+float lenght(float2 a);
 double sqrt(double x);
 float fract(float x);
+float smoothstep(float edge0, float edge1, float x);
 #endif // UTILS_H_
