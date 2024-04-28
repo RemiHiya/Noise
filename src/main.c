@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
     buffer *buffer = malloc(sizeof(struct BUFFER_T));
     buffer->buffer = malloc(win.ws_col * win.ws_row * sizeof(float));
     buffer->w = win.ws_col;
-    buffer->h = win.ws_row;
+    buffer->h = win.ws_row - 1;
 
     render(buffer, voronoi);
     draw_buffer(buffer);

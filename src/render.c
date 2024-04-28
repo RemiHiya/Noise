@@ -5,8 +5,8 @@
 
 
 void draw_buffer(buffer *buffer) {
-    //char intensity[] = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^`'.";
-    char intensity[] = " .:-=+*#%@";
+    char intensity[] = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\"^`'.";
+    //char intensity[] = " .:-=+*#%@";
 
     for (int y=0; y<buffer->h; ++y) {
         for (int x=0; x<buffer->w; ++x) {
