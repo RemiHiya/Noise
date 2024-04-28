@@ -22,4 +22,6 @@ float lenght(float2 a);
 double sqrt(double x);
 float fract(float x);
 float smoothstep(float edge0, float edge1, float x);
+float lerp(float a, float b, float alpha);
+float rand_float();
 #endif // UTILS_H_
