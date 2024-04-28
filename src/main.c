@@ -4,7 +4,7 @@
 #include <sys/ioctl.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <unistd.h>
 
 int main(int argc, char *argv[]) {
     struct winsize win;
@@ -18,5 +18,12 @@ int main(int argc, char *argv[]) {
     render(buffer, voronoi);
     draw_buffer(buffer);
 
+    /*
+    int n = 120;
+    while (--n) {
+        render(buffer, voronoi, n);
+        draw_buffer(buffer);
+        sleep(1/10);
+    }*/
     return 0;
 }
