@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
     buffer->w = win.ws_col;
     buffer->h = win.ws_row - 1;
 
-    render(buffer, voronoi);
+    render(buffer, value);
     draw_buffer(buffer);
 
     /*

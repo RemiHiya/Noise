@@ -22,7 +22,7 @@ void render(buffer *buffer, float (*fn)(float2, float, int)) {
     for (int y=0; y<buffer->h; ++y) {
         for (int x=0; x<buffer->w; ++x) {
             float2 coord = { (float)x/buffer->w, (float)y/buffer->h};
-            buffer->buffer[y*buffer->w + x] = fn(coord, 0.5* (float)buffer->w/buffer->h);
+            buffer->buffer[y*buffer->w + x] = fn(coord, 0.5* (float)buffer->w/buffer->h, 42);
         }
     }
 }

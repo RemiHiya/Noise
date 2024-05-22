@@ -32,6 +32,24 @@ float voronoi(float2 uv, float ratio, int seed) {
 }
 
 float value(float2 uv, float ratio, int seed) {
+    int num = 4;
+    uv.x *= ratio;
+    uv.x *= num; uv.y *= num;
+
+    float2 i = floor2(uv);
+    float2 f = fract2(uv);
+    float2 u = {f.x*f.x*f.x*(f.x*(f.x*6-15)+10), f.y*f.y*f.y*(f.y*(f.y*6-15)+10)};
+
+    //return MAX(f.x, f.y);
+    return 0.5 + 0.5 * lerp(
+        lerp(hash(i), hash((float2){i.x+1, i.y}), u.x),
+        lerp(hash((float2){i.x, i.y+1}), hash((float2){i.x+1, i.y+1}), u.x),
+        u.y
+    );
+}
+
+/*
+float value(float2 uv, float ratio, int seed) {
     int num = 7;
     uv.x *= ratio;
     uv.x *= num; uv.y *= num;
@@ -51,3 +69,4 @@ float value(float2 uv, float ratio, int seed) {
 
     return out;
 }
+*/
