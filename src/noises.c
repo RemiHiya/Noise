@@ -32,7 +32,7 @@ float voronoi(float2 uv, float ratio, int seed) {
 }
 
 float value(float2 uv, float ratio, int seed) {
-    int num = 4;
+    int num = 7;
     uv.x *= ratio;
     uv.x *= num; uv.y *= num;
 
@@ -48,25 +48,3 @@ float value(float2 uv, float ratio, int seed) {
     );
 }
 
-/*
-float value(float2 uv, float ratio, int seed) {
-    int num = 7;
-    uv.x *= ratio;
-    uv.x *= num; uv.y *= num;
-
-    float2 grid_coord = { fract(uv.x) - 0.5, fract(uv.y) - 0.5 };
-
-    srand(1000*(grid_coord.x) + 1000*(grid_coord.y));
-    float a = rand_float();
-    srand(1000*(1+grid_coord.x) + 1000*(grid_coord.y));
-    float b = rand_float();
-    srand(100*(grid_coord.x) + 100*(1+grid_coord.y));
-    float c = rand_float();
-
-    float out = lerp(a, b, lenght((float2) {uv.x-grid_coord.x, uv.y-grid_coord.y}));
-
-
-
-    return out;
-}
-*/
